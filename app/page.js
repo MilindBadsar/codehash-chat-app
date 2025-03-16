@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 const HomePage = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center px-6">
+    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-6">
       <header className="absolute top-0 left-0 right-0 p-6 flex justify-between items-center max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold">CodeHash</h1>
         <nav className="hidden md:flex space-x-6">
@@ -24,7 +24,7 @@ const HomePage = () => {
         </Link>
       </header>
 
-      <main className="flex flex-col items-center text-center mt-20">
+      <main className="flex flex-col items-center text-center">
         <h2 className="text-5xl font-extrabold leading-tight max-w-3xl">
           Connect, Chat, and Collaborate in Real-Time with{" "}
           <span className="text-blue-500">CodeHash</span>

@@ -2,9 +2,12 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { UserButton } from "@clerk/nextjs";
+import { UserButton, useUser } from "@clerk/nextjs";
 
 const Navbar = () => {
+  // const user = useUser();
+  // console.log(user.user?.id);
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -16,15 +19,10 @@ const Navbar = () => {
           </Link>
 
           <div className="hidden md:flex space-x-6 items-center">
-            <Link href="/about" className="text-gray-300 hover:text-white">
-              About
-            </Link>
             <Link href="/forums" className="text-gray-300 hover:text-white">
               Forums
             </Link>
-            <Link href="/chat" className="text-gray-300 hover:text-white">
-              Chat
-            </Link>
+
             <div className="flex justify-center items-center">
               <UserButton />
             </div>

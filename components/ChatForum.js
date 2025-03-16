@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { useState, useEffect } from "react";
 import {
   useCreateChatClient,
@@ -13,19 +14,18 @@ import {
 
 import "stream-chat-react/dist/css/v2/index.css";
 
-const apiKey = "dz5f4d5kzrue";
-const userId = "winter-math-1";
-const userName = "winter";
-const userToken =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoid2ludGVyLW1hdGgtMSIsImV4cCI6MTc0MTk0NTc3OX0.ZAJ3iI73oDxeb9kNiur3JSA1QOlY5OdzRx5yzjbr6OM";
+const ChatForum = ({ clerkUser, slug }) => {
+  const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY;
+  const userId = clerkUser.id;
+  const userName = clerkUser.name;
+  const userToken = clerkUser.token;
 
-const user = {
-  id: userId,
-  name: userName,
-  image: `https://getstream.io/random_png/?name=${userName}`,
-};
+  const user = {
+    id: userId,
+    name: userName,
+    image: `https://getstream.io/random_png/?name=${userName}`,
+  };
 
-export default function ChatForum() {
   const [channel, setChannel] = useState();
   const client = useCreateChatClient({
     apiKey,
@@ -36,13 +36,14 @@ export default function ChatForum() {
   useEffect(() => {
     if (!client) return;
 
-    const channel = client.channel("messaging", "custom_channel_id", {
+    const channel = client.channel("messaging", slug, {
       image: "https://getstream.io/random_png/?name=react",
-      name: "Talk about React",
-      members: [userId],
+      name: slug + " Discussion",
+      // members: [userId],
     });
 
     setChannel(channel);
+    // channel.addMembers([userId]);
   }, [client]);
 
   if (!client) return <div>Setting up client & connection...</div>;
@@ -59,4 +60,6 @@ export default function ChatForum() {
       </Channel>
     </Chat>
   );
-}
+};
+
+export default ChatForum;

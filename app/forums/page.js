@@ -5,39 +5,39 @@ import React from "react";
 const topics = [
   {
     text: "Python",
-    img: "/python.png",
+    img: "/logos/py.png",
     desc: "Let's discuss everything related to Python",
-    slug: "python-discuss",
+    slug: "Python",
   },
   {
     text: "JavaScript",
-    img: "/javascript.png",
+    img: "/logos/js.png",
     desc: "All things JavaScript, from frontend to backend",
-    slug: "js-discuss",
+    slug: "JavaScript",
   },
   {
     text: "React",
-    img: "/react.png",
+    img: "/logos/react.png",
     desc: "Build modern UI with React & its ecosystem",
-    slug: "react-discuss",
+    slug: "React",
   },
   {
     text: "Next JS",
-    img: "/nextjs.png",
+    img: "/logos/nextjs.png",
     desc: "Server-side development with Next JS",
-    slug: "nextjs-discuss",
+    slug: "Next-JS",
   },
   {
     text: "AI & Machine Learning",
-    img: "/ai-ml.png",
+    img: "/logos/ai.png",
     desc: "Discussions on AI, ML, and deep learning",
-    slug: "aiml-discuss",
+    slug: "AI-ML",
   },
   {
     text: "Cybersecurity",
-    img: "/cybersecurity.png",
+    img: "/logos/cybersec.png",
     desc: "Discussions on cybersecurity trends",
-    slug: "security-discuss",
+    slug: "Cybersecurity",
   },
 ];
 
@@ -53,8 +53,8 @@ const Forums = () => {
           >
             <Image
               src={topic.img}
-              width={60}
-              height={60}
+              width={75}
+              height={75}
               alt={topic.text}
               className="mb-4"
             />
